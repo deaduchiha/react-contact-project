@@ -1,7 +1,9 @@
 import { ChangeEvent, useState } from "react";
 import { TContact } from "../../types/contact";
+import ContactList from "./ContactList";
 
 const Contact = () => {
+  const [contacts, setContacts] = useState<TContact[]>([]);
   const [contact, setContact] = useState<TContact>({
     name: "",
     email: "",
@@ -16,7 +18,7 @@ const Contact = () => {
   };
 
   const addHandler = () => {
-    console.log(contact);
+    setContacts((contacts) => [...contacts, contact]); // contacts => prevContacts
   };
 
   return (
@@ -45,6 +47,7 @@ const Contact = () => {
         />
         <button onClick={addHandler}>add contact</button>
       </div>
+      <ContactList contacts={contacts} />
     </div>
   );
 };
