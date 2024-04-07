@@ -3,6 +3,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 import { TContact } from "../../types/contact";
 import ContactList from "./ContactList";
+import { inputs } from "../../constants/inputs";
 
 const Contact = () => {
   const [contacts, setContacts] = useState<TContact[]>([]);
@@ -40,27 +41,17 @@ const Contact = () => {
   return (
     <div>
       <div>
-        <input
-          type="text"
-          placeholder="name"
-          value={contact.name}
-          name="name"
-          onChange={changeHandler}
-        />
-        <input
-          type="email"
-          placeholder="email"
-          value={contact.email}
-          name="email"
-          onChange={changeHandler}
-        />
-        <input
-          type="text"
-          placeholder="phone"
-          value={contact.phone}
-          name="phone"
-          onChange={changeHandler}
-        />
+        {inputs.map((i) => (
+          <input
+            key={i.name}
+            type={i.type}
+            placeholder={i.placeholder}
+            name={i.name}
+            value={contact[i.name as keyof TContact]}
+            onChange={changeHandler}
+          />
+        ))}
+
         <button onClick={addHandler}>add contact</button>
       </div>
       <ContactList contacts={contacts} />
