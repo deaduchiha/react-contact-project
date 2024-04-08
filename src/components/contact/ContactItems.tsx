@@ -10,6 +10,7 @@ const ContactItems = ({
   contacts: TContact[];
   setContacts: Dispatch<SetStateAction<TContact[]>>;
 }) => {
+  // its not good to have send props like this -> props drilling
   const deleteHandler = () => {
     const newContacts = contacts.filter((c) => c.id !== id);
     setContacts(newContacts);
