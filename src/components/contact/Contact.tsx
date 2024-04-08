@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import styles from "./Contact.module.css";
 
 import { TContact } from "../../types/contact";
 import ContactList from "./ContactList";
@@ -39,7 +40,7 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <div>
         {inputs.map((i) => (
           <input
@@ -51,10 +52,11 @@ const Contact = () => {
             onChange={changeHandler}
           />
         ))}
-
-        <button onClick={addHandler}>add contact</button>
       </div>
+      <button onClick={addHandler}>add contact</button>
+
       <ContactList contacts={contacts} />
+
       <Toaster />
     </div>
   );

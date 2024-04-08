@@ -1,0 +1,46 @@
+.container {
+  margin: 50px auto 0;
+  max-width: 50vw;
+}
+
+.container > div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.container > div > input:focus {
+  outline: none;
+}
+.container > div > input::placeholder {
+  color: #c7f9cc;
+}
+.container > div > input {
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+  padding: 10px 15px;
+  background-color: #22577a;
+  color: #fff;
+}
+
+.container > button {
+  width: fit-content;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 5px 10px;
+
+  border: 1px solid #57cc99;
+  background-color: #08273b;
+
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: 0.3s;
+
+  &:hover {
+    font-weight: 800;
+    color: #57cc99;
+    cursor: pointer;
+  }
+}
