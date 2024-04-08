@@ -57,7 +57,7 @@ const Contact = () => {
       </div>
       <button onClick={addHandler}>add contact</button>
 
-      <ContactList contacts={contacts} />
+      <ContactList contacts={contacts} setContacts={setContacts} />
 
       <Toaster />
     </div>
