@@ -39,6 +39,8 @@ const Contact = () => {
       name: "",
       phone: "",
     });
+
+    console.log(contacts);
   };
 
   return (

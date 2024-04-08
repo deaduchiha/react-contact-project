@@ -10,8 +10,6 @@ const ContactList = ({
   contacts: TContact[];
   setContacts: Dispatch<SetStateAction<TContact[]>>;
 }) => {
-  console.log(contacts);
-
   return (
     <div className={styles.container}>
       <h2>contacts list</h2>
