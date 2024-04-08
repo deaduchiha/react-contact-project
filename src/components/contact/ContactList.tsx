@@ -1,4 +1,5 @@
 import { TContact } from "../../types/contact";
+import ContactItems from "./ContactItems";
 import styles from "./ContactList.module.css";
 
 const ContactList = ({ contacts }: { contacts: TContact[] }) => {
@@ -10,11 +11,12 @@ const ContactList = ({ contacts }: { contacts: TContact[] }) => {
       {contacts.length ? (
         <div>
           {contacts.map((c) => (
-            <ul key={c.name}>
-              <li>🗿 {c.name}</li>
-              <li>📧 {c.email}</li>
-              <li>📞 {c.phone}</li>
-            </ul>
+            <ContactItems
+              email={c.email}
+              name={c.name}
+              phone={c.phone}
+              key={c.id}
+            />
           ))}
         </div>
       ) : (

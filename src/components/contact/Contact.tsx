@@ -1,5 +1,7 @@
 import { ChangeEvent, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import toast, { Toaster } from "react-hot-toast";
+
 import styles from "./Contact.module.css";
 
 import { TContact } from "../../types/contact";
@@ -18,7 +20,7 @@ const Contact = () => {
     const name = e.target.name;
     const value = e.target.value;
 
-    setContact((contact) => ({ ...contact, [name]: value }));
+    setContact((contact) => ({ ...contact, [name]: value, id: uuidv4() }));
   };
 
   const addHandler = () => {
